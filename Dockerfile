@@ -50,7 +50,7 @@ RUN conda install -y python=3.6 numpy pyyaml scipy ipython mkl scikit-learn matp
 RUN conda clean -ya
 RUN conda install -y mkl-include cmake cffi typing cython
 RUN conda install -y -c mingfeima mkldnn
-RUN pip install boto3 addict tqdm regex pyyaml opencv-python tensorboardX torchsummary azureml_core azureml-sdk albumentations pretrainedmodels efficientnet_pytorch scikit-image==0.15  yacs git+https://github.com/qiuzhongwei-USTB/ResNeSt.git tensorboard pydicom
+RUN pip install boto3 addict tqdm regex pyyaml opencv-python tensorboardX torchsummary azureml_core azureml-sdk albumentations pretrainedmodels efficientnet_pytorch scikit-image==0.15  yacs git+https://github.com/qiuzhongwei-USTB/ResNeSt.git tensorboard pydicom ruamel.yaml
 RUN pip install --upgrade pipi
 
 
