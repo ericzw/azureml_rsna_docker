@@ -45,7 +45,7 @@ RUN conda install pytorch torchvision cudatoolkit=10.1 -c pytorch
 RUN conda install -y -c conda-forge pillow=6.2.1
 
 # Install general libraries
-RUN conda install -y python=3.6 numpy pyyaml scipy ipython mkl scikit-learn matplotlib pandas setuptools Cython h5py graphviz
+RUN conda install -y python=3.6 numpy scipy ipython mkl scikit-learn matplotlib pandas setuptools Cython h5py graphviz
 RUN conda clean -ya
 RUN conda install -y mkl-include cmake cffi typing cython
 RUN conda install -y -c mingfeima mkldnn
