@@ -38,21 +38,17 @@ RUN ln -s /opt/miniconda/etc/profile.d/conda.sh /etc/profile.d/conda.sh && \
 ENV PATH /opt/miniconda/bin:$PATH
 RUN conda update -n base conda
 
-# Install pytorch
-# RUN conda install -y pytorch torchvision cudatoolkit=10.0 -c pytorch
-#RUN conda install -y pytorch=1.3 torchvision=0.4.2 cudatoolkit=10.0 -c pytorch
-RUN conda install pytorch torchvision cudatoolkit=10.1 -c pytorch
-RUN conda install -y -c conda-forge pillow=6.2.1
-
 # Install general libraries
 RUN conda install -y python=3.6 numpy scipy ipython mkl scikit-learn matplotlib pandas setuptools Cython h5py graphviz
 RUN conda clean -ya
 RUN conda install -y mkl-include cmake cffi typing cython
 RUN conda install -y -c mingfeima mkldnn
-RUN pip install boto3 addict tqdm regex pyyaml opencv-python tensorboardX torchsummary azureml_core azureml-sdk albumentations pretrainedmodels efficientnet_pytorch scikit-image==0.15  yacs git+https://github.com/qiuzhongwei-USTB/ResNeSt.git tensorboard pydicom
+RUN pip install boto3 addict tqdm regex pyyaml opencv-python torchsummary azureml_core==1.10.0 azureml-sdk==1.10.0 albumentations pretrainedmodels efficientnet_pytorch scikit-image==0.15  yacs git+https://github.com/qiuzhongwei-USTB/ResNeSt.git tensorboard pydicom
 RUN pip install --upgrade pipi
 
-
+# Install pytorch
+RUN conda install pytorch torchvision cudatoolkit=10.1 -c pytorch
+RUN conda install -y -c conda-forge pillow=6.2.1
 
 # Set CUDA_ROOT
 RUN export CUDA_HOME="/usr/local/cuda"
