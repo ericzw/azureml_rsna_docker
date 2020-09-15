@@ -40,6 +40,8 @@ RUN conda update -n base conda
 
 # Install general libraries
 RUN conda install -y python=3.6 numpy scipy ipython mkl scikit-learn matplotlib pandas setuptools Cython h5py graphviz
+#dcm read problem
+RUN conda install -c conda-forge gdcm -y
 RUN conda clean -ya
 RUN conda install -y mkl-include cmake cffi typing cython
 RUN conda install -y -c mingfeima mkldnn
