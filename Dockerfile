@@ -39,7 +39,7 @@ ENV PATH /opt/miniconda/bin:$PATH
 RUN conda update -n base conda
 
 #ImportError: No module named ruamel.yaml
-RUN conda install -c r -y conda python=3.6.2 pip=20.1.1
+RUN conda install -c r -y conda python=3.6.2 pip
 
 # Install general libraries
 RUN conda install -y numpy scipy ipython mkl scikit-learn matplotlib pandas setuptools Cython h5py graphviz
