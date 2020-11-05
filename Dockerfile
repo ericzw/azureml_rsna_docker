@@ -49,7 +49,7 @@ RUN conda clean -ya
 RUN conda install -y mkl-include cmake cffi typing cython
 RUN conda install -y -c mingfeima mkldnn
 # RUN pip install boto3 addict tqdm regex pyyaml opencv-python torchsummary azureml_core==1.10.0 azureml-sdk==1.10.0 albumentations pretrainedmodels efficientnet_pytorch scikit-image==0.15  yacs git+https://github.com/qiuzhongwei-USTB/ResNeSt.git tensorboard pydicom
-RUN pip install boto3 addict tqdm regex pyyaml opencv-python torchsummary albumentations pretrainedmodels efficientnet_pytorch scikit-image==0.15  yacs git+https://github.com/qiuzhongwei-USTB/ResNeSt.git tensorboard pydicom joblib mmcv
+RUN pip install boto3 addict tqdm regex pyyaml opencv-python torchsummary albumentations pretrainedmodels efficientnet_pytorch yacs git+https://github.com/qiuzhongwei-USTB/ResNeSt.git tensorboard pydicom joblib mmcv
 # RUN pip install --upgrade pipi
 
 # Install pytorch
