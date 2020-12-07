@@ -56,6 +56,9 @@ RUN pip install boto3 addict tqdm regex pyyaml opencv-python torchsummary albume
 RUN conda install pytorch torchvision cudatoolkit=10.1 -c pytorch
 RUN conda install -y -c conda-forge pillow=6.2.1
 
+#Install fastai
+RUN pip install fastai
+
 # Set CUDA_ROOT
 RUN export CUDA_HOME="/usr/local/cuda"
 
