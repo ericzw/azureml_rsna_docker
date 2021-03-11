@@ -1,4 +1,3 @@
-# FROM mcr.microsoft.com/azureml/base-gpu:latest 
 FROM mcr.microsoft.com/azureml/base-gpu:openmpi3.1.2-cuda10.1-cudnn7-ubuntu18.04
 
 # Install basic dependencies
@@ -49,12 +48,15 @@ RUN conda clean -ya
 RUN conda install -y mkl-include cmake cffi typing cython
 RUN conda install -y -c mingfeima mkldnn
 # RUN pip install boto3 addict tqdm regex pyyaml opencv-python torchsummary azureml_core==1.10.0 azureml-sdk==1.10.0 albumentations pretrainedmodels efficientnet_pytorch scikit-image==0.15  yacs git+https://github.com/qiuzhongwei-USTB/ResNeSt.git tensorboard pydicom
-RUN pip install boto3 addict tqdm regex pyyaml opencv-python torchsummary albumentations==0.4.6 pretrainedmodels efficientnet_pytorch scikit-image==0.15  yacs tensorboard pydicom joblib mmcv pycocotools
+RUN pip install boto3 addict tqdm regex pyyaml opencv-python torchsummary albumentations==0.4.6 pretrainedmodels efficientnet_pytorch scikit-image==0.15  yacs tensorboard pydicom joblib mmcv attrdict tiffile git+https://github.com/qubvel/segmentation_models.pytorch pycocotools
 # RUN pip install --upgrade pipi
 
 # Install pytorch
 RUN conda install pytorch torchvision cudatoolkit=10.1 -c pytorch
 RUN conda install -y -c conda-forge pillow=6.2.1
+
+#Install fastai
+RUN pip install fastai
 
 # Set CUDA_ROOT
 RUN export CUDA_HOME="/usr/local/cuda"
