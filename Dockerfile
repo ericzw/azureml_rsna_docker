@@ -53,7 +53,7 @@ RUN pip install boto3 addict tqdm regex pyyaml opencv-python torchsummary scikit
 
 # Install pytorch
 RUN conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
-RUN conda install -y -c conda-forge pillow=6.2.1
+RUN conda install -y -c conda-forge pillow
 
 # Set CUDA_ROOT
 RUN export CUDA_HOME="/usr/local/cuda"
