@@ -166,7 +166,7 @@ RUN cd /tmp && \
     make install
     
 RUN conda install -c r -y conda python=3.7
-RUN conda install -y numpy pyyaml scipy ipython mkl scikit-learn matplotlib pandas setuptools Cython h5py graphviz libgcc mkl-include cmake cffi typing cython pip=20.1.1
+RUN conda install -y numpy pyyaml scipy ipython scikit-learn matplotlib pandas setuptools Cython h5py graphviz libgcc cmake cffi typing cython pip=20.1.1
 RUN conda clean -ya
 RUN pip install boto3 addict tqdm regex pyyaml opencv-python opencv-contrib-python nltk spacy future tensorboard filelock tokenizers sentencepiece yapf attrs azureml-core==1.30.0 pillow scikit-image
 # Set CUDA_ROOT
