@@ -173,7 +173,7 @@ RUN pip install boto3 addict tqdm regex pyyaml opencv-python opencv-contrib-pyth
 RUN export CUDA_HOME="/usr/local/cuda"
 
 # Install pytorch
-RUN conda install pytorch torchvision torchaudio cudatoolkit=11.1 -c pytorch -c nvidia
+RUN conda install pytorch==1.9.0 torchvision torchaudio cudatoolkit=11.1 -c pytorch -c nvidia
 #Install Faiss
 #RUN conda install faiss-gpu -c pytorch # For CUDA10.1
 #RUN pip uninstall -y pillow && CC="cc -mavx2" pip install --force-reinstall pillow-simd && \
@@ -183,9 +183,9 @@ RUN conda install pytorch torchvision torchaudio cudatoolkit=11.1 -c pytorch -c 
 # RUN HOROVOD_GPU_ALLREDUCE=NCCL pip install --no-cache-dir horovod==0.16.1
 
 #Install apex
-RUN pip uninstall -y apex || :
-RUN cd /tmp && \
-    SHA=ToUcHMe git clone https://github.com/NVIDIA/apex.git
-RUN cd /tmp/apex/ && \
-    python setup.py install --cuda_ext --cpp_ext && \
-    rm -rf /tmp/apex*
+# RUN pip uninstall -y apex || :
+# RUN cd /tmp && \
+#     SHA=ToUcHMe git clone https://github.com/NVIDIA/apex.git
+# RUN cd /tmp/apex/ && \
+#     python setup.py install --cuda_ext --cpp_ext && \
+#     rm -rf /tmp/apex*
