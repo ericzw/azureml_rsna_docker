@@ -166,7 +166,7 @@ RUN cd /tmp && \
     make install
     
 RUN conda install -c r -y conda python=3.7
-RUN conda install -y numpy pyyaml scipy ipython scikit-learn matplotlib pandas setuptools Cython h5py graphviz libgcc cmake cffi typing cython pip=20.1.1
+RUN conda install -y pyyaml scipy ipython scikit-learn matplotlib pandas setuptools Cython h5py graphviz libgcc cmake cffi typing cython pip=20.1.1
 RUN conda clean -ya
 RUN pip install boto3 addict tqdm regex pyyaml opencv-python opencv-contrib-python nltk spacy future tensorboard filelock tokenizers sentencepiece yapf attrs azureml-core==1.30.0 pillow scikit-image lmdb
 # Set CUDA_ROOT
@@ -174,6 +174,8 @@ RUN export CUDA_HOME="/usr/local/cuda"
 
 # Install pytorch
 RUN conda install pytorch==1.9.0 torchvision torchaudio cudatoolkit=11.1 -c pytorch -c nvidia
+
+# ENV MKL_SERVICE_FORCE_INTEL=1
 #Install Faiss
 #RUN conda install faiss-gpu -c pytorch # For CUDA10.1
 #RUN pip uninstall -y pillow && CC="cc -mavx2" pip install --force-reinstall pillow-simd && \
